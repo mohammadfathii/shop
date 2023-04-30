@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebMarket.DataAccess.Data;
 using WebMarket.DataAccess.Services;
+using WebMarket.DataAccess.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +22,8 @@ builder.Services.AddDbContext<WebMarket_DB>(options =>
 //      builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
 // builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 
-builder.Services.AddScoped<CategoryService>();
-builder.Services.AddScoped<CoverTypeService>();
+builder.Services.AddScoped<ICategoryService,CategoryService>();
+builder.Services.AddScoped<ICoverTypeService,CoverTypeService>();
 
 /*builder.Services.AddDbContext<WebMarket_DB>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));*/

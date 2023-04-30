@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebMarket.DataAccess.Services;
+using WebMarket.DataAccess.Services.Interface;
 using WebMarket.Models;
 
-namespace WebMarket.Web.Controllers
+namespace WebMarket.Web.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
-    {   
-        private CategoryService _db { get; set; }
-        public CategoryController(CategoryService db)
+    {
+        private ICategoryService _db { get; set; }
+        public CategoryController(ICategoryService db)
         {
             _db = db;
         }
@@ -36,11 +36,11 @@ namespace WebMarket.Web.Controllers
             // Custom Validation Error
             if (category.Name == null || category.Name == "")
             {
-                ModelState.AddModelError("Name","لطفا فیلد نام را پر نمایید !");
+                ModelState.AddModelError("Name", "لطفا فیلد نام را پر نمایید !");
             }
             if (category.DisplayOrder == 0)
             {
-                ModelState.AddModelError("DisplayOrder","لطفا فیلد ترتیب نمایش را پر کنید !");
+                ModelState.AddModelError("DisplayOrder", "لطفا فیلد ترتیب نمایش را پر کنید !");
             }
 
             if (ModelState.IsValid) // Validation

@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebMarket.DataAccess.Services;
+using WebMarket.DataAccess.Services.Interface;
 using WebMarket.Models;
 
-namespace WebMarket.Web.Controllers
+namespace WebMarket.Web.Areas.Admin.Controllers
 {
     public class CoverTypeController : Controller
     {
-        public CoverTypeService _db { get; set; }
-        public CoverTypeController(CoverTypeService db) {
+        public ICoverTypeService _db { get; set; }
+        public CoverTypeController(ICoverTypeService db)
+        {
             _db = db;
         }
 

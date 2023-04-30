@@ -9,5 +9,10 @@ namespace WebMarket.Web.Areas.Customer.Controllers
         {
             return View();
         }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
     }
 }
