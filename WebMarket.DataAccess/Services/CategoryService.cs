@@ -29,7 +29,7 @@ namespace WebMarket.DataAccess.Services
             WebMarket_DB.Categories.Update(category);
         }
 
-        public void Remvoe(Category category){
+        public void Remove(Category category){
             WebMarket_DB.Categories.Remove(category);
         }
 

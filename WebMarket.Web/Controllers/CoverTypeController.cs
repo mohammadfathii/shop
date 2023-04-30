@@ -41,7 +41,7 @@ namespace WebMarket.Web.Controllers
             if (ModelState.IsValid) // Validation
             {
                 _db.Add(CoverType);
-                _db.save(); // need to use after all changes 
+                _db.Save(); // need to use after all changes 
                 TempData["success"] = "کاور تایپ با موفقیت ساخته شد !";
                 return RedirectToAction("Index");
             }
@@ -54,7 +54,7 @@ namespace WebMarket.Web.Controllers
             if (CoverType != null)
             {
                 _db.Remove(CoverType);
-                _db.save();
+                _db.Save();
                 TempData["success"] = "کاور تایپ با موفقیت حذف شد !";
                 return RedirectToAction("Index");
             }
@@ -84,7 +84,7 @@ namespace WebMarket.Web.Controllers
             {
                 _db.Update(CoverType);
                 TempData["success"] = "کاور تایپ با موفقیت ویرایش شد !";
-                _db.save();
+                _db.Save();
             }
             return RedirectToAction("Index");
         }

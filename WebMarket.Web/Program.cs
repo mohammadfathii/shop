@@ -21,8 +21,8 @@ builder.Services.AddDbContext<WebMarket_DB>(options =>
 //      builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
 // builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 
-builder.Services-builder.Services.AddScoped<CategoryService>();
-builder.Services-builder.Services.AddScoped<CoverTypeService>();
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<CoverTypeService>();
 
 /*builder.Services.AddDbContext<WebMarket_DB>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));*/
