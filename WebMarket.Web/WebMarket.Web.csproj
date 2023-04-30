@@ -24,4 +24,8 @@
 		<ProjectReference Include="..\WebMarket.Models\WebMarket.Models.csproj"></ProjectReference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Areas\Admin\Controllers\" />
+	</ItemGroup>
+
 </Project>
