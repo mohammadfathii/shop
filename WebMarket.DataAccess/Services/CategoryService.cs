@@ -37,5 +37,9 @@ namespace WebMarket.DataAccess.Services
             WebMarket_DB.Categories.RemoveRange(categories);
         }
 
+        public void Save(){
+            WebMarket_DB.SaveChanges();
+        }
+
     }
 }
