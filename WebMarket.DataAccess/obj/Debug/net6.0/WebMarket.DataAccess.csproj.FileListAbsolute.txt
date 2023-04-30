@@ -1,0 +1,17 @@
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.csproj.AssemblyReference.cache
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.AssemblyInfoInputs.cache
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.AssemblyInfo.cs
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\bin\Debug\net6.0\WebMarket.DataAccess.deps.json
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\bin\Debug\net6.0\WebMarket.DataAccess.runtimeconfig.json
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\bin\Debug\net6.0\WebMarket.DataAccess.dll
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\bin\Debug\net6.0\WebMarket.DataAccess.pdb
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\bin\Debug\net6.0\WebMarket.Models.dll
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\bin\Debug\net6.0\WebMarket.Models.pdb
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.csproj.CopyComplete
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.dll
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\refint\WebMarket.DataAccess.dll
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.pdb
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\WebMarket.DataAccess.genruntimeconfig.cache
+C:\Users\sampa\Desktop\asp\WebMarket\WebMarket\WebMarket.DataAccess\obj\Debug\net6.0\ref\WebMarket.DataAccess.dll

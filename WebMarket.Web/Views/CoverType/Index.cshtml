@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CoverType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<partial name="_Notification" />
+
+
+<div class="container pt-3">
+
+    <div class="row">
+        <div class="col-lg-8">
+            <h1>کاور تایپ ها : </h1>
+        </div>
+
+        <div class="col-lg-4 text-end">
+            <a class="btn btn-block btn-success" asp-controller="CoverType" asp-action="Create">
+                ساخت کاور تایپ <i class="bi bi-plus-circle"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <table class="table mt-3">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">نام</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CoverType coverType in Model)
+            {
+                <tr>
+                    <th width="10%" scope="row"><a asp-controller="CoverType" asp-action="Show" asp-route-id="@coverType.Id">@coverType.Id</a></th>
+                    <td width="10%">@coverType.Name</td>
+                    <td width="10%">
+                        <div class="w-75 btn-group" role="group">
+                            <a class="btn btn-block btn-danger" asp-controller="CoverType" asp-action="Delete" asp-route-id="@coverType.Id">حذف <i class="bi bi-file-earmark-x"></i></a>
+                            <a class="btn btn-block btn-warning" asp-controller="CoverType" asp-action="Edit" asp-route-id="@coverType.Id">ویرایش<i class="bi bi-pencil"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
