@@ -1,10 +1,11 @@
 using WebMarket.Models;
 using WebMarket.DataAccess.Data;
+using WebMarket.DataAccess.Services.Interface;
 using System.Linq.Expressions;
 
 namespace WebMarket.DataAccess.Services
 {
-    public class CategoryService{
+    public class CategoryService : ICategoryService{
         public WebMarket_DB WebMarket_DB;
         public CategoryService(WebMarket_DB webMarket_DB){
             WebMarket_DB = webMarket_DB;

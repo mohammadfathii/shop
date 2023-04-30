@@ -1,10 +1,11 @@
 using System.Linq.Expressions;
 using WebMarket.DataAccess.Data;
+using WebMarket.DataAccess.Services.Interface;
 using WebMarket.Models;
 
 namespace WebMarket.DataAccess.Services
 {
-    public class CoverTypeService{
+    public class CoverTypeService : ICoverTypeService{
         public WebMarket_DB WebMarket_DB;
         public CoverTypeService(WebMarket_DB webMarket_DB){
             WebMarket_DB = webMarket_DB;
@@ -34,13 +35,12 @@ namespace WebMarket.DataAccess.Services
             WebMarket_DB.Remove(coverType);
         }
 
-        public void RemoveRange(ICollection<CoverType> coverTypes){
+        public void RemoveRange(IEnumerable<CoverType> coverTypes)
+        {
             WebMarket_DB.RemoveRange(coverTypes);
         }
-
         public void Save(){
             WebMarket_DB.SaveChanges();
         }
-
     }
 }
