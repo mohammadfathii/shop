@@ -16,7 +16,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebMarket</a>
+                <a class="navbar-brand" asp-area="Customer" asp-controller="Home" asp-action="Index">WebMarket</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,29 +24,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="navbarColor01">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">خانه <i class="bi bi-house"></i></a>
+                            <a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Index">خانه <i class="bi bi-house"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">امنیت <i class="bi bi-shield"></i></a>
+                            <a class="nav-link" asp-area="Admin" asp-controller="CoverType" asp-action="Index">کاور تایپ ها<i class="bi bi-stickies"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Article" asp-action="Index">پست ها <i class="bi bi-stickies"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="CoverType" asp-action="Index">کاور تایپ ها<i class="bi bi-stickies"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">دسته بندی ها <i class="bi bi-bookmarks"></i> </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">دراپ دان</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item text-dark" href="#">Action</a>
-                                <a class="dropdown-item text-dark" href="#">Another action</a>
-                                <a class="dropdown-item text-dark" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-dark" href="#">Separated link</a>
-                            </div>
+                            <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">دسته بندی ها <i class="bi bi-bookmarks"></i> </a>
                         </li>
                     </ul>
                 </div>
@@ -61,7 +45,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - WebMarket - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - WebMarket - <a asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -4,6 +4,7 @@ using WebMarket.Models;
 
 namespace WebMarket.Web.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private ICategoryService _db { get; set; }
