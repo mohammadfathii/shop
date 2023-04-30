@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebMarket.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using WebMarket.DataAccess.Data;
 namespace WebMarket.DataAccess.Migrations
 {
     [DbContext(typeof(WebMarket_DB))]
-    partial class WebMarket_DBModelSnapshot : ModelSnapshot
+    [Migration("20230430175846_AddTableProduct")]
+    partial class AddTableProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
