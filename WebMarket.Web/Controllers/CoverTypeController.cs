@@ -1,25 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebMarket.DataAccess.Repository.IRepository;
+using WebMarket.DataAccess.Services;
 using WebMarket.Models;
 
 namespace WebMarket.Web.Controllers
 {
     public class CoverTypeController : Controller
     {
-        public IUnitOfWork UnitOfWork { get; set; }
-        public CoverTypeController(IUnitOfWork unitOfWork) {
-            UnitOfWork = unitOfWork;
+        public CoverTypeService _db { get; set; }
+        public CoverTypeController(CoverTypeService db) {
+            _db = db;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<CoverType> categories = UnitOfWork.CoverType.GetAll();
+            IEnumerable<CoverType> categories = _db.GetAll();
             return View(categories);
         }
 
         public IActionResult Show(int Id)
         {
-            CoverType CoverType = UnitOfWork.CoverType.GetFirstOrDefault(CoverType => CoverType.Id == Id);
+            CoverType CoverType = _db.GetFirstOrDefault(CoverType => CoverType.Id == Id);
             return View(CoverType);
         }
 
@@ -40,8 +40,8 @@ namespace WebMarket.Web.Controllers
 
             if (ModelState.IsValid) // Validation
             {
-                UnitOfWork.CoverType.Add(CoverType);
-                UnitOfWork.SaveChanges(); // need to use after all changes 
+                _db.Add(CoverType);
+                _db.save(); // need to use after all changes 
                 TempData["success"] = "کاور تایپ با موفقیت ساخته شد !";
                 return RedirectToAction("Index");
             }
@@ -53,8 +53,8 @@ namespace WebMarket.Web.Controllers
         {
             if (CoverType != null)
             {
-                UnitOfWork.CoverType.Remove(CoverType);
-                UnitOfWork.SaveChanges();
+                _db.Remove(CoverType);
+                _db.save();
                 TempData["success"] = "کاور تایپ با موفقیت حذف شد !";
                 return RedirectToAction("Index");
             }
@@ -67,9 +67,9 @@ namespace WebMarket.Web.Controllers
                 return NotFound();
             }
 
-            CoverType CoverType = UnitOfWork.CoverType.GetFirstOrDefault(CoverType => CoverType.Id == Id);
-            // CoverType CoverType = UnitOfWork.Categories.FirstOrDefault(cat => cat.Id == Id);
-            // CoverType CoverType = UnitOfWork.Categories.SingleOrDefault(cat => cat.Id == Id);
+            CoverType CoverType = _db.GetFirstOrDefault(CoverType => CoverType.Id == Id);
+            // CoverType CoverType = _db.Categories.FirstOrDefault(cat => cat.Id == Id);
+            // CoverType CoverType = _db.Categories.SingleOrDefault(cat => cat.Id == Id);
 
             if (CoverType == null)
             {
@@ -82,9 +82,9 @@ namespace WebMarket.Web.Controllers
         {
             if (CoverType != null)
             {
-                UnitOfWork.CoverType.Update(CoverType);
+                _db.Update(CoverType);
                 TempData["success"] = "کاور تایپ با موفقیت ویرایش شد !";
-                UnitOfWork.SaveChanges();
+                _db.save();
             }
             return RedirectToAction("Index");
         }

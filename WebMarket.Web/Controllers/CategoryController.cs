@@ -1,25 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebMarket.DataAccess.Repository.IRepository;
+using WebMarket.DataAccess.Services;
 using WebMarket.Models;
 
 namespace WebMarket.Web.Controllers
 {
     public class CategoryController : Controller
     {   
-        private IUnitOfWork _db { get; set; }
-        public CategoryController(IUnitOfWork db)
+        private CategoryService _db { get; set; }
+        public CategoryController(CategoryService db)
         {
             _db = db;
         }
+
         public IActionResult Index()
         {
-            IEnumerable<Category> categories = _db.Category.GetAll();
+            IEnumerable<Category> categories = _db.GetAll();
             return View(categories);
         }
 
         public IActionResult Show(int Id)
         {
-            Category category = _db.Category.GetFirstOrDefault(category => category.Id == Id);
+            Category category = _db.GetFirstOrDefault(category => category.Id == Id);
             return View(category);
         }
 
@@ -44,8 +45,8 @@ namespace WebMarket.Web.Controllers
 
             if (ModelState.IsValid) // Validation
             {
-                _db.Category.Add(category);
-                _db.SaveChanges(); // need to use after all changes 
+                _db.Add(category);
+                _db.Save(); // need to use after all changes 
                 TempData["success"] = "دسته بندی با موفقیت ساخته شد !";
                 return RedirectToAction("Index");
             }
@@ -57,8 +58,8 @@ namespace WebMarket.Web.Controllers
         {
             if (category != null)
             {
-                _db.Category.Remove(category);
-                _db.SaveChanges();
+                _db.Remove(category);
+                _db.Save();
                 TempData["success"] = "دسته بندی با موفقیت حذف شد !";
                 return RedirectToAction("Index");
             }
@@ -71,7 +72,7 @@ namespace WebMarket.Web.Controllers
                 return NotFound();
             }
 
-            Category category = _db.Category.GetFirstOrDefault(Category => Category.Id == Id);
+            Category category = _db.GetFirstOrDefault(Category => Category.Id == Id);
             // Category category = _db.Categories.FirstOrDefault(cat => cat.Id == Id);
             // Category category = _db.Categories.SingleOrDefault(cat => cat.Id == Id);
 
@@ -86,9 +87,9 @@ namespace WebMarket.Web.Controllers
         {
             if (category != null)
             {
-                _db.Category.Update(category);
+                _db.Update(category);
                 TempData["success"] = "دسته بندی با موفقیت ویرایش شد !";
-                _db.SaveChanges();
+                _db.Save();
             }
             return RedirectToAction("Index");
         }
